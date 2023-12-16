@@ -1,0 +1,10 @@
+controller:
+  kind: daemonset
+  ingressClass:
+    name: nginx-custom-ingress
+  
+  nginxStatus:
+    allowCidrs: "0.0.0.0"
+  
+  service:
+    type: NodePort
