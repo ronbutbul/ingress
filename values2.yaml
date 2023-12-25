@@ -1,10 +1,21 @@
+#controller:
+# kind: daemonset
+#  ingressClass:
+#    name: nginx-custom-ingress
+#  nginxStatus:
+#    allowCidrs: "0.0.0.0"
+#  service:
+#    type: NodePort
 controller:
   kind: daemonset
   ingressClass:
     name: nginx-custom-ingress
-  
+  admissionWebhooks:
+    enabled: false
   nginxStatus:
     allowCidrs: "0.0.0.0"
-  
+  watchIngressWithoutClass: true
+  extraArgs:
+    ingress-class: nginx-custom-ingress
   service:
     type: NodePort
