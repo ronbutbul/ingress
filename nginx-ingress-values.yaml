@@ -19,3 +19,7 @@ controller:
     ingress-class: nginx-custom-ingress
   service:
     type: NodePort
+
+  extraArgs:
+    # setting it for argo-cd
+    enable-ssl-passthrough: "true"
